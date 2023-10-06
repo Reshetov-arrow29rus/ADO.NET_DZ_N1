@@ -23,6 +23,7 @@ namespace ADO.NET_DZ_N1
     public partial class MainWindow : Window
     {
         private SqlConnection con;
+        private SqlCommand com;
 
         public MainWindow()
         {
@@ -55,6 +56,17 @@ namespace ADO.NET_DZ_N1
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Show_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string inserString = "";
+        }
+
+        private void Add_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Add_a_position add_A_Position = new Add_a_position();
+            add_A_Position.ShowDialog();
         }
     }
 }

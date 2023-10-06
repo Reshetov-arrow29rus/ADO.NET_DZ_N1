@@ -5,9 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_DZ_N1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Storeroom" Height="525" Width="800">
     <Canvas>
-        <Button Content="Open" RenderTransformOrigin="8.447,13.163" Canvas.Left="64" Canvas.Top="201" Height="86" Width="217" Click="Open_Button_Click"/>
-        <Button Content="Close" Canvas.Left="503" Canvas.Top="201" HorizontalAlignment="Left" VerticalAlignment="Top" Width="217" Height="86" RenderTransformOrigin="0.579,0.586" Click="Close_Button_Click"/>
+        <Button Content="Open" RenderTransformOrigin="8.447,13.163" Canvas.Left="524" Canvas.Top="10" Height="86" Width="217" Click="Open_Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="Close" Canvas.Left="524" Canvas.Top="324" HorizontalAlignment="Center" VerticalAlignment="Top" Width="217" Height="86" RenderTransformOrigin="0.579,0.586" Click="Close_Button_Click"/>
+        <Button Content="Show" RenderTransformOrigin="8.447,13.163" Canvas.Left="524" Canvas.Top="113" Height="86" Width="217" Click="Show_Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="Add a position" RenderTransformOrigin="8.447,13.163" Canvas.Left="524" Canvas.Top="217" Height="86" Width="217" Click="Add_Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <Canvas Height="484" Width="430" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <DataGrid x:Name="dataGrit" AutoGenerateColumns="False"  Canvas.Left="10" Canvas.Top="10" Height="464" Width="410" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="1.5*" Header="Title" Binding="{Binding Title}" />
+                    <DataGridTextColumn Width="1.5*" Header="Type" Binding="{Binding Type}" />
+                    <DataGridTextColumn Width="1*" Header="Сolour" Binding="{Binding Сolour}" />
+                    <DataGridTextColumn Width="1*" Header="Calories" Binding="{Binding Calories}" />
+                    <DataGridTextColumn Width="1*" Header="Amount" Binding="{Binding Amount}" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Canvas>
     </Canvas>
 </Window>
