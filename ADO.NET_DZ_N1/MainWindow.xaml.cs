@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace ADO.NET_DZ_N1
 {
     /// <summary>
@@ -22,14 +26,17 @@ namespace ADO.NET_DZ_N1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SqlConnection con;
-        private SqlCommand com;
+        SqlConnection con;
+        SqlCommand com;
+        SqlDataReader reader;
 
         public MainWindow()
         {
             InitializeComponent();
             con = new SqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString; ;
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+            com = new SqlCommand();
+            com.Connection = con;
         }
 
         private void Open_Button_Click(object sender, RoutedEventArgs e)
@@ -60,7 +67,14 @@ namespace ADO.NET_DZ_N1
 
         private void Show_Button_Click(object sender, RoutedEventArgs e)
         {
-            string inserString = "";
+            string inserString = "SELECT * FROM Table_Vegetables_and_Fruits";
+            com.CommandText = inserString;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGrid.ItemsSource = dataTable.DefaultView;
+
         }
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)

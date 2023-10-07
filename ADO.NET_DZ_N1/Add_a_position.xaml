@@ -5,25 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_DZ_N1"
         mc:Ignorable="d"
-        Title="Add_a_position" Height="500" Width="800">
+        Title="Add_a_position" Height="410" Width="800">
     <Canvas>
-        <Button Content="Add" RenderTransformOrigin="8.447,13.163" Canvas.Left="524" Canvas.Top="10" Height="86" Width="217" Click="Add_Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Button Content="Exit" RenderTransformOrigin="8.447,13.163" Canvas.Left="524" Canvas.Top="338" Height="86" Width="217" Click="Exit_Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="Add" Canvas.Left="524" Canvas.Top="10" Height="86" Width="217" Click="Add_Button_Click"/>
+        <Button Content="Exit" Canvas.Left="524" Canvas.Top="274" Height="86" Width="217" Click="Exit_Button_Click"/>
 
-        <GroupBox Height="414" Canvas.Left="10" Canvas.Top="10" Width="410" HorizontalAlignment="Center" VerticalAlignment="Center" Header="Добавляем в таблицу">
-            <Canvas Margin="10" Height="390" Width="376">
-                
-                <Label Content="Название" Canvas.Left="20" Canvas.Top="27" RenderTransformOrigin="0.632,0.348" HorizontalAlignment="Left" VerticalAlignment="Center" Width="116" Height="26"/>
-                <TextBox x:Name="titleTextBox" Canvas.Left="20" Canvas.Top="53" Width="344" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <Label Content="Тип (фрукт или овощ)" Canvas.Left="20" Canvas.Top="93" RenderTransformOrigin="0.632,0.348" HorizontalAlignment="Left" VerticalAlignment="Center" Width="160" Height="26"/>
-                <TextBox x:Name="typeTextBox" Canvas.Left="20" Canvas.Top="180" Width="340" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <Label Content="Цвет" Canvas.Left="20" Canvas.Top="154" RenderTransformOrigin="0.632,0.348" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="26"/>
-                <TextBox x:Name="colourTextBox" Canvas.Left="20" Canvas.Top="119" Width="341" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                <Label Content="Калории" Canvas.Left="20" Canvas.Top="215" RenderTransformOrigin="0.632,0.348" HorizontalAlignment="Center" VerticalAlignment="Top" Width="116" Height="26"/>
-                <TextBox x:Name="сaloriesTextBox" Canvas.Left="20" Canvas.Top="241" Width="341" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                <Label Content="Количество" Canvas.Left="20" Canvas.Top="276" RenderTransformOrigin="0.632,0.348" Width="116" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" />
-                <TextBox x:Name="amountTextBox_Copy" Width="340" Height="30" Canvas.Left="18" Canvas.Top="302" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <GroupBox Height="350" Canvas.Left="10" Canvas.Top="10" Width="410" Header="Добавляем в таблицу">
+            <Canvas Margin="11,0,11,0" Height="315" Width="376">
 
+                <Label Content="Название" Canvas.Left="20" Canvas.Top="27" Width="116" Height="26"/>
+                <TextBox x:Name="titleTextBox" Canvas.Left="20" Canvas.Top="53" Width="344" Height="30" FontSize="18"/>
+                <Label Content="Тип (фрукт или овощ)" Canvas.Left="20" Canvas.Top="93" Width="160" Height="26"/>
+                <TextBox x:Name="typeTextBox" Canvas.Left="20" Canvas.Top="180" Width="340" Height="30" FontSize="18"/>
+                <Label Content="Цвет" Canvas.Left="20" Canvas.Top="154" Width="116" Height="26"/>
+                <TextBox x:Name="colourTextBox" Canvas.Left="20" Canvas.Top="119" Width="341" Height="30" FontSize="18"/>
+                <Label Content="Калории" Canvas.Left="20" Canvas.Top="215" Width="116" Height="26"/>
+                <TextBox x:Name="сaloriesTextBox" Canvas.Left="20" Canvas.Top="241" Width="341" Height="30" FontSize="18"/>
 
             </Canvas>
         </GroupBox>
