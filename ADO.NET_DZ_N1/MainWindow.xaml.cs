@@ -79,7 +79,8 @@ namespace ADO.NET_DZ_N1
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
-            Add_a_position add_A_Position = new Add_a_position();
+            // передаем права доступа в класс Add_a_position
+            Add_a_position add_A_Position = new Add_a_position(con);
             add_A_Position.ShowDialog();
         }
     }
