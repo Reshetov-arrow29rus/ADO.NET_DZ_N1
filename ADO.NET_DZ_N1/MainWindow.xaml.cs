@@ -28,7 +28,6 @@ namespace ADO.NET_DZ_N1
     {
         SqlConnection con;
         SqlCommand com;
-        SqlDataReader reader;
 
         public MainWindow()
         {
@@ -70,18 +69,38 @@ namespace ADO.NET_DZ_N1
             string inserString = "SELECT * FROM Table_Vegetables_and_Fruits";
             com.CommandText = inserString;
 
-            SqlDataAdapter adapter = new SqlDataAdapter(com);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            dataGrid.ItemsSource = dataTable.DefaultView;
+            try
+            {
+                using (SqlDataReader reader = com.ExecuteReader())
+                {
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    dataGrid.ItemsSource = dataTable.DefaultView;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Обработка исключения
+                MessageBox.Show("Произошла ошибка: " + ex.Message);
+            }
+
 
         }
 
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
+            // Создаем второе окно и вызываем его.
             // передаем права доступа в класс Add_a_position
             Add_a_position add_A_Position = new Add_a_position(con);
             add_A_Position.ShowDialog();
+        }
+
+        private void Search_Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Создаем второе окно и вызываем его.
+            // передаем права доступа в класс Search
+            Search search = new Search(con);
+            search.ShowDialog();
         }
     }
 }

@@ -23,7 +23,6 @@ namespace ADO.NET_DZ_N1
     /// </summary>
     public partial class Add_a_position : Window
     {
-        private SqlCommand comm;
         private SqlConnection conn;
 
 
@@ -38,12 +37,12 @@ namespace ADO.NET_DZ_N1
             try 
             { 
                 AddObject addObject = new AddObject(conn);
-                addObject.titleObject = titleTextBox.Text;
-                addObject.typeObject = typeTextBox.Text;
-                addObject.colourObject = colourTextBox.Text;
+                addObject.TitleObject = titleTextBox.Text;
+                addObject.TypeObject = typeTextBox.Text;
+                addObject.ColourObject = colourTextBox.Text;
                 float result;
                 if (float.TryParse(сaloriesTextBox.Text, out result))
-                    addObject.сaloriesObject = result;
+                    addObject.CaloriesObject = result;
 
                 addObject.InsertData();
 

@@ -10,10 +10,10 @@ namespace ADO.NET_DZ_N1
 {
     public class AddObject
     {
-        public string titleObject { get; set; }
-        public string typeObject { get; set; }
-        public string colourObject { get; set; }
-        public float сaloriesObject { get; set; }
+        public string TitleObject { get; set; }
+        public string TypeObject { get; set; }
+        public string ColourObject { get; set; }
+        public float CaloriesObject { get; set; }
 
         private SqlConnection connection;
         public AddObject(SqlConnection conn)
@@ -27,10 +27,10 @@ namespace ADO.NET_DZ_N1
 
             using (SqlCommand comm = new SqlCommand(query, connection))
                 {
-                    comm.Parameters.AddWithValue("@Value1", titleObject);
-                    comm.Parameters.AddWithValue("@Value2", typeObject);
-                    comm.Parameters.AddWithValue("@Value3", colourObject);
-                    comm.Parameters.AddWithValue("@Value4", сaloriesObject);
+                    comm.Parameters.AddWithValue("@Value1", TitleObject);
+                    comm.Parameters.AddWithValue("@Value2", TypeObject);
+                    comm.Parameters.AddWithValue("@Value3", ColourObject);
+                    comm.Parameters.AddWithValue("@Value4", CaloriesObject);
 
                     comm.ExecuteNonQuery();
                 }

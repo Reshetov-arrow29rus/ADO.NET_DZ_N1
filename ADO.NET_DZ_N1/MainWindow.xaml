@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="Storeroom" Height="550" Width="800">
     <Canvas>
-        <Button Content="Open" Canvas.Left="524" Canvas.Top="10" Height="86" Width="217" Click="Open_Button_Click"/>
-        <Button Content="Close" Canvas.Left="524" Canvas.Top="324" Width="217" Height="86" Click="Close_Button_Click"/>
-        <Button Content="Show" Canvas.Left="524" Canvas.Top="113" Height="86" Width="217" Click="Show_Button_Click"/>
-        <Button Content="Add a position" Canvas.Left="524" Canvas.Top="217" Height="86" Width="217" Click="Add_Button_Click"/>
+        <Button Content="Open" Canvas.Left="524" Canvas.Top="10" Height="85" Width="217" Click="Open_Button_Click"/>
+        <Button Content="Close" Canvas.Left="524" Canvas.Top="369" Width="217" Height="85" Click="Close_Button_Click"/>
+        <Button Content="Show" Canvas.Left="524" Canvas.Top="100" Height="85" Width="217" Click="Show_Button_Click"/>
+        <Button Content="Add a position" Canvas.Left="524" Canvas.Top="190" Height="84" Width="217" Click="Add_Button_Click"/>
+        <Button Content="Search" Canvas.Left="524" Canvas.Top="279" Width="217" Height="85" Click="Search_Button_Click"/>
 
         <Canvas Height="484" Width="430">
             <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  Canvas.Left="10" Canvas.Top="10" Height="464" Width="410" FontSize="16">

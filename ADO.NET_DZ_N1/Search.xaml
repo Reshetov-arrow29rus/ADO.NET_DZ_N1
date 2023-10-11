@@ -1,0 +1,55 @@
+﻿<Window x:Class="ADO.NET_DZ_N1.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADO.NET_DZ_N1"
+        mc:Ignorable="d"
+        Title="Search" Height="580" Width="820">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Первая половина окна -->
+        <Grid Grid.Column="0">
+            <Canvas>
+                <ListBox x:Name="ListQuery" Height="286" Width="380" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <GroupBox x:Name="Second" Grid.Column="1" Header="Отображение списков" Height="223" Canvas.Left="10" Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="301">
+                    <UniformGrid Columns="1" Rows="5" VerticalAlignment="Top" Margin="10">
+                        <Button x:Name="Show_all_information_Button" Content="Показать всю инф-ю" Click="Show_Button_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="Show_all_title_Button" Content="Показать все название" Click="Show_Button_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="Show_all_colors_Button" Content="Показать все цвета" Click="Show_Button_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="Show_max_calorie_Button" Content="Показать максимальную калорийность" Click="Show_Button_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="Show_min_calorie_Button" Content="Показать минимальную калорийность" Click="Show_Button_Click" Margin="0,0,0,10"/>
+                        <Button x:Name="Show_Average_Calorie_Button" Content="Показать среднюю калорийность" Click="Show_Button_Click" Margin="0"/>
+                    </UniformGrid>
+                </GroupBox>
+            </Canvas>
+        </Grid>
+
+        <!-- Вторая половина окна -->
+        <Grid Grid.Column="1">
+            <Canvas>
+                <Button Content="Exit" Canvas.Left="10" Canvas.Top="479" Height="45" Width="380" Click="Exit_Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <GroupBox Header="Отображение значений" Height="335" Canvas.Left="10" Canvas.Top="10" Width="380" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <UniformGrid Columns="1" VerticalAlignment="Top" Margin="10">
+                        <RadioButton x:Name="Show_Count_Vegetables" Content="Показать количество овощей" Checked="Show_Button_Click" Margin="0,0,0,10"/>
+                        <RadioButton x:Name="Show_Count_Fruits" Content="Показать количество фруктов" Checked="Show_Button_Click" Margin="0,0,0,10"/>
+                        <RadioButton x:Name="Show_Count_Veg_Fr_Color" Content="Показать количество овощей и фруктов заданного цвета" Checked="Show_Button_Click" Margin="0,0,0,10"/>
+                        <RadioButton x:Name="Show_Count_Veg_Fr_Color_Everyone" Content="Показать количество овощей и фруктов каждого цвета" Checked="Show_Button_Click" Margin="0,0,0,10"/>
+                        <RadioButton x:Name="Show_Veg_Fr_Less_Calorie" Content="Показать овощи и фрукты с калорийностью &#x0a; ниже указанной" Checked="Show_Button_Click" Margin="0,0,0,10"/>
+                        <RadioButton x:Name="Show_Veg_Fr_Range_Calorie" Content="Показать овощи и фрукты с калорийностью &#x0a; в указанном диапазоне" Checked="Show_Button_Click" Margin="0,0,0,10"/>
+                        <RadioButton x:Name="Show_All_Veg_Fr_Color_yellow_red" Content="Показать все овощи и фрукты, у которых цвет &#x0a; желтый или красный" Checked="Show_Button_Click" Margin="0"/>
+                    </UniformGrid>
+                </GroupBox>
+                <TextBox x:Name="ParamText" Canvas.Left="10" Canvas.Top="374" Width="380" Height="45"/>
+            </Canvas>
+        </Grid>
+
+    </Grid>
+</Window>
