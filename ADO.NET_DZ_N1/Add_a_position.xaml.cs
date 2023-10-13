@@ -40,8 +40,8 @@ namespace ADO.NET_DZ_N1
                 addObject.TitleObject = titleTextBox.Text;
                 addObject.TypeObject = typeTextBox.Text;
                 addObject.ColourObject = colourTextBox.Text;
-                float result;
-                if (float.TryParse(сaloriesTextBox.Text, out result))
+                int result;
+                if (int.TryParse(сaloriesTextBox.Text, out result))
                     addObject.CaloriesObject = result;
 
                 addObject.InsertData();
@@ -59,8 +59,6 @@ namespace ADO.NET_DZ_N1
                 // Обработка ошибки и отображение сообщения
                 MessageBox.Show("Произошла ошибка, объект не может быть добавлен: " + ex.Message);
             }
-
-
         }
 
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
@@ -94,5 +92,6 @@ namespace ADO.NET_DZ_N1
             }
 
         }
+
     }
 }

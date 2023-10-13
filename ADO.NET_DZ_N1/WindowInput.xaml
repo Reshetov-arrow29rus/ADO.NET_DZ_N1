@@ -1,0 +1,14 @@
+﻿<Window x:Class="ADO.NET_DZ_N1.WindowInput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADO.NET_DZ_N1"
+        mc:Ignorable="d"
+        Title="WindowInput" Height="220" Width="420">
+    <Canvas x:Name="myCanvas">
+        <Label x:Name="LabelWindow"  Canvas.Left="10" Canvas.Top="10"  Width="380" Height="50" FontSize="14"/>
+        <TextBox x:Name="InputColorTextBox"  Canvas.Left="10" Canvas.Top="65" Width="380" Height="30" FontSize="18" TextChanged="InputTextBox_TextChanged"/>
+        <Button x:Name="OkButton" Height="30" Content="Ok" Width="90" Canvas.Left="300" Canvas.Top="144" Click="Button_Click" IsEnabled="False"/>
+    </Canvas>
+</Window>

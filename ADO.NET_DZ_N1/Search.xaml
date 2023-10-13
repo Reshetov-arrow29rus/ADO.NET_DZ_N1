@@ -47,7 +47,6 @@
                         <RadioButton x:Name="Show_All_Veg_Fr_Color_yellow_red" Content="Показать все овощи и фрукты, у которых цвет &#x0a; желтый или красный" Checked="Show_Button_Click" Margin="0"/>
                     </UniformGrid>
                 </GroupBox>
-                <TextBox x:Name="ParamText" Canvas.Left="10" Canvas.Top="374" Width="380" Height="45"/>
             </Canvas>
         </Grid>
 
