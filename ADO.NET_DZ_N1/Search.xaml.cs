@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,6 +39,8 @@ namespace ADO.NET_DZ_N1
         {
             using (SqlCommand command = new SqlCommand())
             {
+                command.Connection = conn;
+
                 ListQuery.Items.Clear();
 
                 if (sender is RadioButton)
@@ -59,8 +63,8 @@ namespace ADO.NET_DZ_N1
                         // переменной str и добавляем значение str в параметр команды SQL.
                         windowInputColor.TextReturned += (returnedText) =>
                         {
-                            if (!int.TryParse(returnedText, out int value1)) 
-                                command.Parameters.AddWithValue("@Цвет", value1);
+                            if (returnedText !=null) 
+                                command.Parameters.AddWithValue("@Цвет", returnedText);
                             else 
                                 MessageBox.Show("Значение цвета задано не верно, попробуйте еще раз!");
                         };
@@ -113,6 +117,21 @@ namespace ADO.NET_DZ_N1
 
                 else if (sender is Button)
                     command.CommandText = buttonsQuery[sender as Button];
+
+
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    string temp = string.Empty;
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        temp += reader[i].ToString() + " ";
+                    }
+                    ListQuery.Items.Add(temp);
+                }
+                reader.Close();
             }
         }
 
@@ -121,7 +140,7 @@ namespace ADO.NET_DZ_N1
         {
             buttonsQuery.Add(Show_all_information_Button, ConfigurationManager.AppSettings["SelectAllVegAndFr"]);
             buttonsQuery.Add(Show_all_title_Button, ConfigurationManager.AppSettings["SelectAllTitles"]);
-            buttonsQuery.Add(Show_all_colors_Button, ConfigurationManager.AppSettings["SelectAllColours"]);
+            buttonsQuery.Add(Show_all_colors_Button, ConfigurationManager.AppSettings["SelectAllColors"]);
             buttonsQuery.Add(Show_max_calorie_Button, ConfigurationManager.AppSettings["MaxCalories"]);
             buttonsQuery.Add(Show_min_calorie_Button, ConfigurationManager.AppSettings["MinCalories"]);
             buttonsQuery.Add(Show_Average_Calorie_Button, ConfigurationManager.AppSettings["AvgCalories"]);

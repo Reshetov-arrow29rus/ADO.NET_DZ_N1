@@ -43,7 +43,13 @@ namespace ADO.NET_DZ_N1
             try
             {
                 con.Open();
+                Show.IsEnabled = true;
+                Add_a_position.IsEnabled = true;
+                Search.IsEnabled = true;
+                Close.IsEnabled = true;
+                Open.IsEnabled = false;
                 MessageBox.Show("Подключено!");
+
             }
             catch (Exception ex)
             {
@@ -56,6 +62,11 @@ namespace ADO.NET_DZ_N1
             try
             {
                 con.Close();
+                Show.IsEnabled = false;
+                Add_a_position.IsEnabled = false;
+                Search.IsEnabled = false;
+                Close.IsEnabled = false;
+                Open.IsEnabled = true;
                 MessageBox.Show("Отключено!");
             }
             catch (Exception ex)

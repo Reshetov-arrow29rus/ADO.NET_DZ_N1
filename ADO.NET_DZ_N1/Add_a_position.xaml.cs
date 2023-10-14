@@ -39,7 +39,7 @@ namespace ADO.NET_DZ_N1
                 AddObject addObject = new AddObject(conn);
                 addObject.TitleObject = titleTextBox.Text;
                 addObject.TypeObject = typeTextBox.Text;
-                addObject.ColourObject = colourTextBox.Text;
+                addObject.ColorObject = colourTextBox.Text;
                 int result;
                 if (int.TryParse(сaloriesTextBox.Text, out result))
                     addObject.CaloriesObject = result;
@@ -78,8 +78,8 @@ namespace ADO.NET_DZ_N1
             else
             {
                 // Проверяем корректность данных в TextBox, где это необходимо
-                float value;
-                if (float.TryParse(сaloriesTextBox.Text, out value))
+                int value;
+                if (int.TryParse(сaloriesTextBox.Text, out value))
                 {
                     // Если все значения заполнены и корректны, делаем кнопку добавления кликабельной
                     AddButton.IsEnabled = true;

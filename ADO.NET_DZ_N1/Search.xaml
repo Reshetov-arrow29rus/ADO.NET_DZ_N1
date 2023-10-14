@@ -16,7 +16,7 @@
         <!-- Первая половина окна -->
         <Grid Grid.Column="0">
             <Canvas>
-                <ListBox x:Name="ListQuery" Height="286" Width="380" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <ListBox x:Name="ListQuery" Height="286" Width="380" Canvas.Left="10" Canvas.Top="10"/>
 
                 <GroupBox x:Name="Second" Grid.Column="1" Header="Отображение списков" Height="223" Canvas.Left="10" Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="301">
                     <UniformGrid Columns="1" Rows="5" VerticalAlignment="Top" Margin="10">
